@@ -1,0 +1,15 @@
+<p>This is the show page for <%=@task.description%></p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @task.description %>
+</p>
+ 
+<p>
+  <strong>Completed?:</strong>
+  <%= @task.is_complete %>
+</p>
+
+
+<%= link_to 'Back', user_path%>
+

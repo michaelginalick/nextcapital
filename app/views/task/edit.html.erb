@@ -1,0 +1,24 @@
+<h2>This is the edit for <%=@task.description%></h2>
+<div class="small-4 columns">
+<%= form_for :user_task, url: user_task_path(@user,@task), method: :patch do |f| %>
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </p>
+ 
+  <p>
+    <%= f.label :Complete %><br>
+    <%= f.check_box :is_complete %>
+    <%= f.hidden_field :value => "complete" %>
+
+  </p>
+ 
+  <p>
+    <button class = "button">Update</button>
+  </p>
+<% end %>
+</div>
+
+<div class="back">
+<%= link_to 'Back', user_path(@user) %>
+</div>

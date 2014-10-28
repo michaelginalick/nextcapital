@@ -1,0 +1,39 @@
+<div class="displayname">
+	<p>Hello, <%=current_user.email%></p>
+</div>
+
+<div class="large-6 columns">
+<table>
+  <tbody>	
+	<tr>
+		<th>Description</th>
+		<th>Complete?</th>
+	</tr>	
+
+	<% @tasks.each do |task| %>
+		<tr>	
+			<td><%= task.description %></td>
+			<td><%= task.is_complete %></td>
+			<td><%= link_to 'Show', user_task_path(@user,task)%></td>
+			<td><%= link_to 'Edit', edit_user_task_path(@user,task) %></td>
+			<td><%= link_to 'Delete', user_task_path(@user, task),
+		    	method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		</tr>	
+	<%end%>
+  </tbody>	
+</table>
+</div>
+<br>
+
+
+
+<div class="new_task">
+	<%= link_to 'New task', new_user_task_path(@user)%>
+</div>
+
+
+
+
+
+
+

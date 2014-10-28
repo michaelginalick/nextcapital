@@ -1,0 +1,22 @@
+<h1>New task for <%=current_user.email%></h1>
+<div class="small-3 columns">
+<%= form_for @task, url:{action: "create"} do |f| %>
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </p>
+
+  <p>
+    <%= f.label :complete? %><br>
+    <%= f.check_box :is_complete %>
+  </p>
+ 
+  <p>
+    <button class = "button">Create</button>
+  </p>
+<% end %>
+</div>
+
+<div class="backnew">
+<%= link_to 'Back', user_path(@user) %>
+</div>
